@@ -18,6 +18,8 @@ conso <- homicide %>%
   left_join(infla) %>% 
   na.omit()
 
+write.csv2(conso, "consolidado.csv", row.names = F)
+
 conso %>% 
   ggplot() +
   aes(log(inflacion), log(tasahomicidio)) +
